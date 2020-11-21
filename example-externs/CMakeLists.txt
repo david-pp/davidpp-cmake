@@ -27,7 +27,7 @@ add_executable(test_spdlog testspdlog.cc)
 ########################################
 # 采用ExternalProject_Add的方式引入项目 #
 #######################################
-# set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH}")
-# include(spdlog2)
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH}")
+include(spdlog2)
 
-# target_link_libraries(test_spdlog PRIVATE spdlog)
+target_link_libraries(test_spdlog PRIVATE spdlog)
