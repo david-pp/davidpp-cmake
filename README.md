@@ -60,8 +60,6 @@ project(MyProject
 add_executable(myexample simple.cpp)
 ```
 
-[TOC]
-
 ## Concepts
 
 <https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html>
