@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.18)
+project(libx)
+set(CMAKE_CXX_STANDARD 11)
+
+option(LIBVERSION_V2 "version...." OFF)
+
+if (LIBVERSION_V2)
+    add_library(x_v2 STATIC x.cpp y.cpp)
+    target_compile_options(x_v2 PUBLIC -fPIC)
+    target_compile_definitions(x_v2 PRIVATE LIBVERSION_V2)
+    target_compile_options(x_v2 PRIVATE -fvisibility=hidden)
+else ()
+    add_library(x_v1 STATIC x.cpp y.cpp)
+    target_compile_options(x_v1 PUBLIC -fPIC)
+    target_compile_options(x_v1 PRIVATE -fvisibility=hidden)
+endif ()
